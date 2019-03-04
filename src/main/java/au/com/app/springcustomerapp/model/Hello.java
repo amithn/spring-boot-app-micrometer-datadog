@@ -1,4 +1,4 @@
-package au.com.app.springcustomerapp;
+package au.com.app.springcustomerapp.model;
 
 public class Hello {
     private String message;
