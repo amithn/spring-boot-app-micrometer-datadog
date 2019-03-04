@@ -5,7 +5,6 @@ management:
     export:
       datadog:
         api-key:
-        application-key: 
+        application-key:
         host-tag: ${spring.application.name}.voicestreams.com
-        tag:
         step: 10s

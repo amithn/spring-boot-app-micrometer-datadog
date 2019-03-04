@@ -1,38 +1,21 @@
-buildscript {
-	ext {
-		springBootVersion = '2.0.2.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+plugins {
+	id "java"
+	id "org.springframework.boot" version "2.1.3.RELEASE"
+	id "io.spring.dependency-management" version "1.0.7.RELEASE"
 }
 
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
-
 group = 'au.com.voicestreams'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
 }
 
-
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
-	compile group: 'org.springframework.cloud', name: 'spring-cloud-cloudfoundry-connector', version: '2.0.2.RELEASE'
-	// runtime "org.postgresql:postgresql"
 	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.boot:spring-boot-starter-aop')
+	compile('org.springframework.cloud:spring-cloud-cloudfoundry-connector:2.0.2.RELEASE')
 	compile('io.micrometer:micrometer-registry-datadog')
-
-   // compile group: 'org.aspectj', name: 'aspectjtools', version: '1.7.2'
-
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
