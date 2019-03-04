@@ -11,10 +11,11 @@ buildscript {
 }
 
 apply plugin: 'java'
+apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group = 'au.com.telstra'
+group = 'au.com.voicestreams'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
@@ -26,7 +27,11 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile group: 'org.springframework.cloud', name: 'spring-cloud-cloudfoundry-connector', version: '2.0.2.RELEASE'
-	runtime "org.postgresql:postgresql"
+	// runtime "org.postgresql:postgresql"
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('io.micrometer:micrometer-registry-datadog')
+
+   // compile group: 'org.aspectj', name: 'aspectjtools', version: '1.7.2'
 
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')

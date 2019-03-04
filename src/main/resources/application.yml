@@ -1,0 +1,11 @@
+spring.application.name: spring-customer-app
+
+management:
+  metrics:
+    export:
+      datadog:
+        api-key:
+        application-key: 
+        host-tag: ${spring.application.name}.voicestreams.com
+        tag:
+        step: 10s
