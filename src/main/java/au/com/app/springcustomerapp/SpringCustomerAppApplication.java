@@ -51,6 +51,7 @@ public class SpringCustomerAppApplication {
 	public void predictionAlgorithm() {
 		try {
 			int millis = new Random().nextInt(5);
+			//int seconds = millis * 1000;
 			int seconds = millis * 10;
 			Thread.sleep(seconds);
 		} catch (InterruptedException e) {
